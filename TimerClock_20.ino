@@ -1,5 +1,5 @@
 //                                             - - o o - -                                       //
-//                                          10th November 2019                                   //
+//                                          11th November 2019                                   //
 //// //// ////     ESP8266 Project Timerclock by John Halfords, The Netherlands      //// //// ////
 //// //// ////        Comments and questions welcome at: halfordsj@gmail.com         //// //// ////
 //                                                                                               //
@@ -24,7 +24,7 @@ ESP8266HTTPUpdateServer WebUpdater;    // Create an instance for the http update
 #include "UserDeclarations.h"          // Wifi settings, Timezone, Location, DebugLevel and pinning can be changed to your design
 
 // Program declarations // DON'T change! Change file "UserDeclarations.h" if your design if different from mine
-String version$ = "v2.0";                         // Version of program
+String version$ = "v2.01";                        // Version of program
 String webpageheader, webpagefooter, webpage;     // Strings for building the webpages
 String syncstatus;                                // String that holds the status of the timesync
 String Command;                                   // String that holds the Command given in the Commandpage
@@ -36,7 +36,7 @@ unsigned int HourTimerOn[4], HourTimerOff[4];     // Variable arrays for Timers 
 unsigned int MinuteTimerOn[4], MinuteTimerOff[4]; // Variable arrays for Timers 1-4
 String FieldClassOn[4], FieldClassOff[4];         // String for the html-class (yellow, grey or green color) for fields on the Timerpage
 
-Timezone TimerTimeZone;                           // Create an instance for ezTime, My timezone
+Timezone TimerTimeZone;                           // Create an instance for ezTime, Timer's timezone
 
 ////// Setup
 void setup()
@@ -72,7 +72,7 @@ void setup()
 
   MakeHeaderFooter();                           // Make standard header, Title, Menu and footer used for every webpage
   ReadTimersEEprom();                           // Subroutine that reads Timer values from EEPROM
-  ChangeSunTimes(1);                            // Subroutine that changes the Sunrise and Sunset. Argument = 0 every night at 00:00:10. Argument = 1 just do it
+  ChangeSunTimes(1);                            // Subroutine that changes the Sunrise and Sunset. Argument = 0 every night at 00:00:30. Argument = 1 just do it
 
   if (DebugLevel == 2) Serial.print(TimerTimeZone.dateTime("d~-m~-Y H~:i~:s ~| "));
   if (DebugLevel >= 1) Serial.println("TimerClock " + version$ + " Ready!");
@@ -82,7 +82,7 @@ void setup()
 void loop()
 {
   WebServer.handleClient();         // Listen for HTTP requests from clients
-  ChangeSunTimes(0);                // Subroutine that changes the Sunrise and Sunset, argument 0 means every night at 00:00:10
+  ChangeSunTimes(0);                // Subroutine that changes the Sunrise and Sunset. Argument = 0 every night at 00:00:30. Argument = 1 just do it
   CheckTimers();                    // Subroutine that checks if timers match the current time
 }
 
@@ -95,10 +95,10 @@ void loop()
 ///////////////////  Subroutines  /////////////////////////
 
 
-// Subroutine that changes the Sunrise and Sunset, argument 0 means every night at 00:00:10, argument 1 means Just Do It! (for startup)
+// Subroutine that changes the Sunrise and Sunset, argument 0 means every night at 00:00:30, argument 1 means Just Do It! (for startup)
 void ChangeSunTimes(bool DoIt)
 {
-  if ((TimerTimeZone.hour() == 14 && TimerTimeZone.minute() == 51 && TimerTimeZone.second() == 10) || (DoIt == 1)) // Do this every nigth at 00:00:10 (DoIt = 0) or at Startup (DoIt = 1)
+  if ((TimerTimeZone.hour() == 0 && TimerTimeZone.minute() == 0 && TimerTimeZone.second() == 30) || (DoIt == 1)) // Do this every nigth at 00:00:30 (DoIt = 0) or at Startup (DoIt = 1)
   {
     Dusk2Dawn mySunTimes (myLatitude, myLongitude, (-TimerTimeZone.getOffset() / 60)); // Create instance for Sunrise and Sunset
     //                                                                                 // Syntax: Dusk2Dawn <location instance name> (Latitude, Longitude, Time offset in minutes to UTC (minus!))
@@ -202,6 +202,8 @@ void StartWiFi()
   if (WifiSSID3 != "") wifiMulti.addAP(WifiSSID3.c_str(), WifiPassw3.c_str());  // adds Wi-Fi network 3 to the list, if exist
   if (WifiSSID4 != "") wifiMulti.addAP(WifiSSID4.c_str(), WifiPassw4.c_str());  // adds Wi-Fi network 4 to the list, if exist
 
+  if (DebugLevel >= 1) Serial.print("Connecting to WiFi..");
+
   while (wifiMulti.run() != WL_CONNECTED) // Wait for the Wi-Fi to connect: scan for Wi-Fi networks, and connect to the strongest of the networks above
   {
     // WiFi indicator blinking while connecting
@@ -209,8 +211,10 @@ void StartWiFi()
     delay(150);
     digitalWrite(wifiindicator, LOW);
     delay(150);
+    if (DebugLevel >= 1) Serial.print(".");
   }
   digitalWrite(wifiindicator, HIGH); // WiFi indicator ON when wifi is connected
+  if (DebugLevel >= 1) Serial.println(".*");
   if (DebugLevel >= 1) Serial.println("Wifi is ON ...");
   if (DebugLevel >= 1) Serial.print("and connected to: ");
   if (DebugLevel >= 1) Serial.println(WiFi.SSID());               // Tell us what network we're connected to

@@ -23,7 +23,8 @@ const int TimesGPIO = 2;                      // How many times the GPIO has to 
 //                                            //    (my remote is "fire-and-forget" so i set this value to 2) Value minimum = 1, no max
 const int GPIOdelay = 500;                    // See previous, time in milliseconds to wait for sending the next HIGH-LOW to the same GPIO
 const int GPIOhightime = 500;                 // Time in milliseconds to wait between sending the HIGH and LOW to the GPIO, so actually 'how long is the GPIO HIGH'
-const int DebugLevel = 2;                     // 0 = NO Debugmessages, 1 = Debugmessages, 2 = D-M-YYYY HH:MM:SS (local time) + Debugmessages to com-port (baud = myBaudrate)
+const int HistoryPage = 1;                    // Debug messages to Html-page 'History'. 0 = NO Historypage, 1 = Historypage (format on Historypage is D-M-YYYY HH:MM:SS (local time) + message)
+const int DebugLevel = 2;                     // Debug messages to com-port. 0 = NO Debugmessages, 1 = Debugmessages, 2 = D-M-YYYY HH:MM:SS (local time) + message (baud = myBaudrate)
 const int myBaudrate = 19200;                 // Baudrate you prefer for serial communication. Possible values: 300/1200/2400/4800/9600/19200/38400/57600/74880/115200/230400/250000/500000/1000000/2000000
 //                                            //    Set your serial monitor accordingly
 unsigned int wifiindicator = 2;               // Friendly name for GPIO2  (=D4) .     // the wifiindicator blinks during connecting and is ON while connected

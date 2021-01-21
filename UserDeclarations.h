@@ -15,8 +15,8 @@ String WifiSSID4  = "";                       // ... and for Wifi 4  .
 String WifiPassw4 = "";                       // ... and for Wifi 4 .
 //                                            //
 String myTimeZone = "Europe/Amsterdam";       // Set your timezone (countrycodes; https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
-const float myLatitude = 52.000000;           // Latitude must be in decimal degrees (DD), e.g. 52.000000
-const float myLongitude =  5.000000;          // Longitude must be in decimal degrees (DD), e.g. 5.000000
+const float myLatitude = 52.000000;           // Latitude must be in decimal degrees (DD), e.g. 52.000000, used to determine SunSet and SunRise
+const float myLongitude =  5.000000;          // Longitude must be in decimal degrees (DD), e.g. 5.000000, used to determine SunSet and SunRise
 //                                            // Tip: Click your location in Google Maps, wait, click again (no double-click) to see your values
 //
 const int TimesGPIO = 2;                      // How many times the GPIO has to send HIGH-LOW to the corresponding GPIO when the timers are addressed

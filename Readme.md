@@ -4,6 +4,8 @@
 //                                             - - o o - -                                       //
 
 # TimerClock_with_SunSet-SunRise
+VERSION 3.0 22nd october 2021
+
 Timer Clock program for the ESP8266.
 4 timers with ON and OFF time or automatically switch ON and/or OFF by SunSet and/or SunRise with Offset.
 The timers control each a user definable GPIO and a http-command.

@@ -6,9 +6,9 @@
 # TimerClock_with_SunSet-SunRise
 Timer Clock program for the ESP8266.
 4 timers with ON and OFF time or automatically switch ON and/or OFF by SunSet and/or SunRise with Offset.
+The timers control each a user definable GPIO and a http-command.
 
-
-ESP8266 (I have used the Wemos NodeMcu V3 Lolin).
+Hardware: ESP8266 (I have used the Wemos NodeMcu V3 Lolin).
 
 My hardware design is described in document: "TimerClock Project (ESP8266) Schematic.xlsx"
 My Arduino IDE settings are in an screenshot called: "Arduino IDE setting.png"
@@ -21,9 +21,10 @@ My Arduino IDE settings are in an screenshot called: "Arduino IDE setting.png"
  - Remote reset and restart (command page)
  - The program controls 4 outputs, which are in my hardware design connected to an RF remote control,
    which controls my ligths in my house (controls page)
+ - Every timer statuschange (ON or OFF) can also fire a http-command, you can use it for example for webhooks or Tasmota
  - On the website you can control the outputs manually (in my case: switch the ligths on/off)
  - On the website you can configure 4 timers (Timer a - d) (timers page)
-   Every timer has it's own ON - time and OFF -time
+   Every timer has it's own ON-time and OFF-time
    Per time you can choose if you set the time manually or set it to SunSet or SunRise (with up to 99 minutes offset)
    
  Used Libraries:
@@ -34,7 +35,9 @@ My Arduino IDE settings are in an screenshot called: "Arduino IDE setting.png"
  - EEPROM.h                    library to write to, and read from EEPROM
  - ezTime.h                    Very well documented Time libary with everything you possibly want! (https://github.com/ropg/ezTime)
  - Dusk2Dawn.h                 Library to define Sunset and Sunrise (https://github.com/dmkishi/Dusk2Dawn)
+ - ESP8266HTTPClient.h         Library to run as a HTTP cliënt (to send the http-commands)
 
+ 
  Final Note, about me:
  =====================
  - I am not a programmer.

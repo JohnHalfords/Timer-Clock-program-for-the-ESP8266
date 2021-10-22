@@ -6,7 +6,7 @@
 //                                       Please read Readme.md                                   //
 //                                             - - o o - -                                       //
 
-// What's new in 3.0:
+// What is new in 3.0:
 // - Every timer statuschange (ON or OFF) can also fire a http-command, you can use it for example for webhooks or Tasmota
 // - Few cosmetics
 // - Removed the controls Timer A - D (All ON of All OFF), never used it anyway...
@@ -17,13 +17,13 @@
 // Switch back on the WiFi server function that the ESP8266 has by default
 // Requests are welcome!
 
-// What was in 2.2:
+// What was new in 2.2:
 // - IsDST not used in Dusk2Dawn, info see "void ChangeSunTimes(bool DoIt)"
 // - Resized iFrame for new ESP8266HTTPUpdateServer.h (now able to update FS as well)
 // - Last sync time added on info page
 // - Restyling info page
 
-// What was in 2.1:
+// What was new in 2.1:
 // - Offset from Sunrise / Sunset
 // - Reorganised code for html Timerspage
 // - History page

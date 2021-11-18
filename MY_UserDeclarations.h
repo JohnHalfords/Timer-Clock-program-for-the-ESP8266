@@ -5,10 +5,10 @@
 
 // User declarations /////////////////////////////////////////////////////////////// User declarations /////////////////////////////////////////////////////////
 //
-String WifiSSID1  = "YourSSID1";              // Fill in the name (SSID) of Wifi Network 1   <- You have to fill in at least 1
-String WifiPassw1 = "difficultpassword1234";  // Fill in the password of Wifi Network SSID 1 <- You have to fill in at least 1
-String WifiSSID2  = "YourSSID2";              // ... and for Wifi 2  .
-String WifiPassw2 = "difficultpassword1234";  // ... and for Wifi 2   .
+String WifiSSID1  = "Outatime";               // Fill in the name (SSID) of Wifi Network 1   <- You have to fill in at least 1
+String WifiPassw1 = "2006avondjurk";          // Fill in the password of Wifi Network SSID 1 <- You have to fill in at least 1
+String WifiSSID2  = "";                       // ... and for Wifi 2  .
+String WifiPassw2 = "";                       // ... and for Wifi 2   .
 String WifiSSID3  = "";                       // ... and for Wifi 3    . <- If you don't use 2, 3 OR 4: don't delete the lines but keep the string empty: ""
 String WifiPassw3 = "";                       // ... and for Wifi 3   .
 String WifiSSID4  = "";                       // ... and for Wifi 4  .

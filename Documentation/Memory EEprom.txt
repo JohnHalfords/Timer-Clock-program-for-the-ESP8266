@@ -1,0 +1,33 @@
+  /*
+    EEPROM Memory, Size 2089 (! 1 more then last address !)
+
+    Addresses and their Variables
+
+    Timers:                             HTTP-commands:
+    -------                             --------------
+    0  HourTimerOn[0]                    25  - 280 HTTPcommandOn[0]
+    1  MinuteTimerOn[0]                  81  - 535 HTTPcommandOff[0]
+    2  HourTimerOff[0]                   36  - 790 HTTPcommandOn[1]
+    3  MinuteTimerOff[0]                 791 - 1045 HTTPcommandOff[1]
+    4  HourTimerOn[1]                   1046 - 1300 HTTPcommandOn[2]
+    5  MinuteTimerOn[1]                 1301 - 1555 HTTPcommandOff[2]
+    6  HourTimerOff[1]                  1556 - 1810 HTTPcommandOn[3]
+    7  MinuteTimerOff[1]                1811 - 2065 HTTPcommandOff[3]
+    8  HourTimerOn[2]
+    9  MinuteTimerOn[2]                 Configs:
+    10 HourTimerOff[2]                  --------
+    11 MinuteTimerOff[2]                2066 - 2072 myLongitude
+    12 HourTimerOn[3]                   2073 - 2078 myLatitude
+    13 MinuteTimerOn[3]                 2079 - 2080 myTimeZone
+    14 HourTimerOff[3]                  2081 TimesGPIO
+    15 MinuteTimerOff[3]                2082 GPIOdelay
+    16 Sunbits                          2083 GPIOhightime
+    17 MinuteTimerOnOffset[0]           2084 HistoryPage
+    18 MinuteTimerOffOffset[0]
+    19 MinuteTimerOnOffset[1]           Various:
+    20 MinuteTimerOffOffset[1]          --------
+    21 MinuteTimerOnOffset[2]           2085 - 2088 RanBefore
+    22 MinuteTimerOffOffset[2]
+    23 MinuteTimerOnOffset[3]
+    24 MinuteTimerOffOffset[3]
+  */

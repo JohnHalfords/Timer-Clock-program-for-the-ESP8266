@@ -6,6 +6,10 @@
 # TimerClock_with_SunSet-SunRise
 VERSION 3.1, Date: 18 November 2021
 
+!!! Attention:
+- Code written for ESP8266 (Core 2.7.4)
+- Dusk2Dawn.h library download zip from Github! Don't install with Arduino IDE! (https://github.com/dmkishi/Dusk2Dawn)
+
 Timer Clock program for the ESP8266.
 4 timers with ON and OFF time or automatically switch ON and/or OFF by SunSet and/or SunRise with Offset.
 The timers control each a user definable GPIO and a http-command.

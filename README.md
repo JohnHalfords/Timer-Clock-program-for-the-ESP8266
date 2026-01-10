@@ -1,5 +1,5 @@
 # TimerClock_with_SunSet-SunRise by John Halfords, The Netherlands
-<a href="https://github.com/JohnHalfords/Timer-Clock-program-for-the-ESP8266">Got to Github page...</a>
+<a href="https://github.com/JohnHalfords/Timer-Clock-program-for-the-ESP8266">For download, go to the Github page...</a>
 <br>
 VERSION 3.1, Date: 18 November 2021
 <br>
@@ -51,5 +51,6 @@ My Arduino IDE settings are in an screenshot called: "Arduino IDE setting.png"
  - I really like to receive your comments or questions, thanks in advance.
  <br>
  GrTx, John
+
 
 

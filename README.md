@@ -1,9 +1,4 @@
-//                                             - - o o - -                                       //
-//                                         This file belongs to:                                 //
-//// //// ////     ESP8266 Project Timerclock by John Halfords, The Netherlands      //// //// ////
-//                                             - - o o - -                                       //
-
-# TimerClock_with_SunSet-SunRise
+# TimerClock_with_SunSet-SunRise by John Halfords, The Netherlands
 VERSION 3.1, Date: 18 November 2021
 
 !!! Attention:
@@ -20,8 +15,8 @@ My hardware design is described in document: "TimerClock Project (ESP8266) Schem
 My Arduino IDE settings are in an screenshot called: "Arduino IDE setting.png"
 
 
- Functionality:
- ==============
+ Functionality:<br>
+ ==============<br>
  - Webserver at http://ip-adres/
  - Extended settings page where you can set Timezone, Longitude, Latitude and several GPIO controls
  - Update your sketch bij http (settings page)
@@ -34,8 +29,8 @@ My Arduino IDE settings are in an screenshot called: "Arduino IDE setting.png"
    Every timer has it's own ON-time and OFF-time
    Per time you can choose if you set the time manually or set it to SunSet or SunRise (with up to 99 minutes offset)
    
- Used Libraries:
- ===============
+ Used Libraries:<br>
+ ===============<br>
  - ESP8266WiFiMulti.h          library to connect to WiFi and automaticly choose the strongest network
  - ESP8266WebServer.h          library to run the WebServer
  - ESP8266HTTPUpdateServer.h   library for updating sketch through http
@@ -45,12 +40,13 @@ My Arduino IDE settings are in an screenshot called: "Arduino IDE setting.png"
  - ESP8266HTTPClient.h         Library to run as a HTTP cliënt (to send the http-commands)
 
  
- Final Note, about me:
- =====================
+ Final Note, about me:<br>
+ =====================<br>
  - I am not a programmer.
  - I do a lot of trial and error, googling and look at other people's code. That's how i learn.
  - I have tried to document the code as highly and clearly as possible.
  - I am Dutch, so my English is not flawless...
  - I really like to receive your comments or questions, thanks in advance.
- 
+ <br>
  GrTx, John
+
